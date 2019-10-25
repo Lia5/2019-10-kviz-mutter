@@ -1,0 +1,16 @@
+@import "_mixins/font-face";
+
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Regular/Montserrat-Regular", 400);
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Bold/Montserrat-Bold", 700);
+
+@include font-face("PlayfairDisplay", "../assets/fonts/PlayfairDisplay-Regular/PlayfairDisplay-Regular", 400);
+@include font-face("PlayfairDisplay", "../assets/fonts/PlayfairDisplay-Italic/PlayfairDisplay-Italic", 700, italic);
+
+
+@include font-face("Helvetica-Light", "../assets/fonts/Helvetica-Light/Helvetica-Light", 200);
+@include font-face("Augustia", "../assets/fonts/Augustia/Augustia", 400);
+
+
+@include font-face("AlexandraZeferinoOne", "../assets/fonts/AlexandraZeferinoOne/AlexandraZeferinoOne", 400);
+@include font-face("MuseoCyrl", "../assets/fonts/MuseoCyrl-500/MuseoCyrl-500", 500);
+@include font-face("Lato", "../assets/fonts/Lato-Regular/Lato-Regular", 400);

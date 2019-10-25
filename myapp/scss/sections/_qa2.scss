@@ -1,0 +1,84 @@
+.question2 {
+    &__pic-general {
+        position: relative;
+        width: 1000px;
+        height: 561px;
+        background: url('../assets/img/colors.jpg') no-repeat;
+        background-size: 100%;
+    }
+    &__pic {
+        border: 1px solid #000;
+        position: absolute;
+        width: 17%;
+        height: 22%;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    &__word {
+        max-width: 162px;
+        padding: 5px;
+        margin: 5px 10px;
+        border: 3px solid rgb(3, 109, 195);
+        border-radius: 5px;
+        cursor: pointer;
+        background: #fff;
+    }
+}
+#question2 {
+    &__pic1 {
+        top: 1%;
+        left: 1%;
+        width: 17%;
+        height: 25%;
+    }
+    &__pic2 {  
+        top: 13%;
+        left: 19%;
+        width: 16%;
+        height: 28%;
+    }
+    &__pic3 {  
+        top: 1%;
+        left: 37%;
+        width: 19%;
+        height: 25%;
+    }
+    &__pic4 {  
+        top: 27%;
+        left: 49%;
+        width: 25%;
+        height: 32%;
+    }
+    &__pic5 {  
+        top: 1%;
+        left: 72%;
+        width: 22%;
+        height: 30%;
+    }
+    &__pic6 {  
+        top: 43%;
+        left: 5%;
+        width: 21%;
+        height: 39%;  
+    }
+    &__pic7 {  
+        top: 32%;
+        left: 27%;
+        width: 22%;
+        height: 39%;
+    }
+    &__pic8 {  
+        top: 60%;
+        left: 38%;
+        width: 38%;
+        height: 39%;
+    }
+    &__pic9 {  
+        top: 37%;
+        left: 75%;
+        width: 23%;
+        height: 48%
+    }
+    
+}

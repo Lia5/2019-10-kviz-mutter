@@ -1,0 +1,48 @@
+.footer {
+    padding: 159px 50px 59px;
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        font-size: 25px;
+        // font-family: $title-font;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+    }
+    &__menu {
+        font-size: 12px;
+        text-transform: uppercase;
+        ul {
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
+    
+        }
+        a {
+            display: block;
+            padding: 20px;
+        }
+    }
+}
+.rights {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: #646464;
+}
+.social {
+    display: flex;
+    &__item {
+        display: block;
+        padding: 20px 33px;
+        &:hover svg {
+            fill: #fdac5c;
+        }
+    }
+    svg {
+        fill: #000;
+    }
+
+}
