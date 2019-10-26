@@ -22,6 +22,10 @@
         margin: 0 10px;
         text-align: center;
         font-size: 60px;
+        @media only screen and (max-width: 557px) {
+            width: 65px;
+            font-size: 46px;
+        }
         &.letter-right {
             border-color: rgb(2, 107, 34);
         }

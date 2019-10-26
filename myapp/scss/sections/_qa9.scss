@@ -17,6 +17,10 @@
         @media only screen and (max-width: 1240px) {
             padding: 20px;
         }
+        @media only screen and (max-width: 557px) {
+            padding: 9px;
+            margin: 5px auto;
+        }
     }
 
     &__word {
@@ -48,6 +52,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media only screen and (max-width: 557px) {
+            justify-content: space-around;
+        }
     }
 }
 #question9 {

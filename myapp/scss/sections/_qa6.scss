@@ -3,11 +3,16 @@
         background: #fff;
         padding: 40px 15%;
         border-radius: 25px;
-
+        @media only screen and (max-width: 557px) {
+            padding: 12px 7%;
+        }
     }
     .question__pic {
         max-width: 273px;
         margin: 10px auto;
+        @media only screen and (max-width: 557px) {
+            max-width: 43%;
+        }
         img {
             width: 100%;
             height: auto;
@@ -42,5 +47,8 @@
         font-size: 20px;
         max-width: 190px;
         margin: 25px 10px;
+        @media only screen and (max-width: 557px) {
+            margin: 8px 6px;
+        }
     }
 }

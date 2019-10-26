@@ -8,6 +8,10 @@
             @media only screen and (max-width: 1240px) {
                 height: 80vh;
             }
+            @media only screen and (max-width: 557px) {
+                height: auto;
+                max-width: 100%; 
+            }
         }
     }
 }

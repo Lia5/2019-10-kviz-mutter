@@ -3,7 +3,9 @@
         background: #fff;
         padding: 80px 40px;
         border-radius: 25px;
-
+        @media only screen and (max-width: 557px) {
+            padding: 41px 12px;
+        }
     }
     .btn {
         margin: 14px auto;
@@ -17,6 +19,11 @@
             justify-content: center;
             font-size: 44px;
         }
+
+        @media only screen and (max-width: 557px) {
+            font-size: 33px;
+        }
+    
         input {
             background: none;
             border: 3px solid #000;;
@@ -27,6 +34,9 @@
             text-align: center;
             @media only screen and (max-width: 1240px) {
                 width: 60px;
+            }
+            @media only screen and (max-width: 557px) {
+                width: 49px;
             }
             &.letter-right {
                 border-color: rgb(2, 107, 34);
