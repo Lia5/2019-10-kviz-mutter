@@ -14,7 +14,10 @@ $(function() {
   if($('.question1').length) {
     let currentDroppable = null;
     let currentDroppableError = null;
-
+    let isDragging = false;
+    function onMouseUp(event) {
+      finishDrag();
+    };
     question1__word1.onmousedown = function(event) {
       let shiftX = event.clientX - question1__word1.getBoundingClientRect().left;
       let shiftY = event.clientY - question1__word1.getBoundingClientRect().top;
@@ -54,6 +57,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -101,6 +108,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -148,6 +159,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -195,6 +210,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -242,6 +261,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -289,6 +312,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -336,6 +363,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -383,6 +414,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -430,6 +465,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -477,6 +516,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -524,6 +567,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -571,6 +618,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -618,6 +669,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -665,6 +720,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -712,6 +771,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -723,7 +786,19 @@ $(function() {
 
 
 
-
+    function finishDrag() {
+      if(!isDragging) {
+        return;
+      }
+  
+      isDragging = false;
+  
+      dragElement.style.top = parseInt(dragElement.style.top) + pageYOffset + 'px';
+      dragElement.style.position = 'absolute';
+  
+      document.removeEventListener('mousemove', onMouseMove);
+      dragElement.removeEventListener('mouseup', onMouseUp);
+    }
 
     function enterDroppableError(elem) {
       elem.classList.add('error');
@@ -793,6 +868,10 @@ $(function() {
   if($('.question2').length) {
     let currentDroppable = null;
     let currentDroppableError = null;
+    let isDragging = false;
+    function onMouseUp(event) {
+      finishDrag();
+    };
     question2__word1.onmousedown = function(event) {
       let shiftX = event.clientX - question2__word1.getBoundingClientRect().left;
       let shiftY = event.clientY - question2__word1.getBoundingClientRect().top;
@@ -832,6 +911,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -879,6 +962,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -926,6 +1013,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -973,6 +1064,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1020,6 +1115,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1067,6 +1166,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1114,6 +1217,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1161,6 +1268,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1208,6 +1319,10 @@ $(function() {
             enterDroppable(currentDroppable);
           }
         }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
       }
       document.addEventListener('mousemove', onMouseMove);
 
@@ -1216,7 +1331,19 @@ $(function() {
         question2__word9.onmouseup = null;
       };
     };
-
+    function finishDrag() {
+      if(!isDragging) {
+        return;
+      }
+  
+      isDragging = false;
+  
+      dragElement.style.top = parseInt(dragElement.style.top) + pageYOffset + 'px';
+      dragElement.style.position = 'absolute';
+  
+      document.removeEventListener('mousemove', onMouseMove);
+      dragElement.removeEventListener('mouseup', onMouseUp);
+    }
 
     function enterDroppableError(elem) {
       elem.classList.add('error');
