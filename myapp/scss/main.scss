@@ -99,6 +99,9 @@ ul,li {
 	font-family: MuseoCyrl,Cambria,Cochin,Georgia,Times,'Times New Roman',serif;
 	font-size: 34px;
 	letter-spacing: 0.1em;
+	@media only screen and (max-width: 980px) {
+		font-size: 22px;
+	}
 
 }
 .title {
@@ -109,6 +112,10 @@ ul,li {
 	position: relative;
 	text-align: center;
 	z-index: 1;
+	@media only screen and (max-width: 980px) {
+		font-size: 60px;
+	}
+
 }
 .btn {
 	font-family: Montserrat,Arial,Helvetica,sans-serif;
@@ -132,6 +139,15 @@ ul,li {
 	border-radius: 25px;
 	font-weight: bold;
 	border: 3px solid #000;
+	@media only screen and (max-width: 980px) {
+		font-size: 19px;
+		border-width: 2px;
+		width: 246px;
+		padding: 10px 20px;
+	}
+	@media only screen and (max-width: 557px) {
+		letter-spacing: 1px;
+	}
 	&:hover {
 		background-color: rgb(48, 180, 197);
 		color: #fff;
@@ -200,6 +216,10 @@ ul,li {
 	text-align: center;
 	.subtitle {
 		margin-top: 40px;
+		@media only screen and (max-width: 980px) {
+			margin-top: 10px;
+		}
+	
 	}
 }
 .bellow {

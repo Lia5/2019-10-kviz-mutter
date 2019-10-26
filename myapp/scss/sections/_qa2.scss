@@ -5,6 +5,10 @@
         height: 561px;
         background: url('../assets/img/colors.jpg') no-repeat;
         background-size: 100%;
+        @media only screen and (max-width: 1240px) {
+            width: 100%;
+            height: 56vw;
+        }
     }
     &__pic {
         position: absolute;

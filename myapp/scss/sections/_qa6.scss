@@ -1,14 +1,16 @@
 .question6 { 
     .question__body {
         background: #fff;
-        padding: 40px;
+        padding: 40px 15%;
         border-radius: 25px;
+
     }
     .question__pic {
         max-width: 273px;
         margin: 10px auto;
         img {
             width: 100%;
+            height: auto;
         }
         &.error {
             position: relative;
@@ -32,6 +34,9 @@
         width: 70%;
         display: flex;
         flex-wrap: wrap;
+        @media only screen and (max-width: 1240px) {
+            width: 100%;
+        }
     }
     .question2__word {
         font-size: 20px;

@@ -5,6 +5,9 @@
         overflow: hidden;
         img {
             height: 100%;
+            @media only screen and (max-width: 1240px) {
+                height: 80vh;
+            }
         }
     }
 }
