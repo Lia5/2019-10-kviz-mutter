@@ -1,0 +1,66 @@
+.question8 {
+    &__pic-general {
+        position: relative;
+        width: 1000px;
+        height: 561px;
+        background: url('../assets/img/animals.png') no-repeat;
+        background-size: 100%;
+    }
+    &__pic {
+        position: absolute;
+        width: 17%;
+        height: 22%;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    &__word {
+        max-width: 162px;
+        padding: 5px;
+        margin: 5px 10px;
+        border: 3px solid rgb(3, 109, 195);
+        border-radius: 5px;
+        cursor: pointer;
+        background: #fff;
+    }
+}
+#question8 {
+    &__pic1 {
+        top: 6%;
+        left: 6%;
+        width: 29%;
+        height: 35%
+    }
+    &__pic2 {  
+        top: 16%;
+        left: 38%;
+        width: 26%;
+        height: 48%;
+    }
+    &__pic3 {  
+        top: 1%;
+        left: 71%;
+        width: 27%;
+        height: 50%;
+    }
+    &__pic4 {  
+        top: 52%;
+        left: 12%;
+        width: 25%;
+        height: 47%;
+    }
+    &__pic5 {  
+        top: 71%;
+        left: 42%;
+        width: 18%;
+        height: 19%;
+    }
+    &__pic6 {  
+        top: 49%;
+        left: 64%;
+        width: 31%;
+        height: 52%;
+    }
+
+    
+}

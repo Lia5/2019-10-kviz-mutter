@@ -1,0 +1,64 @@
+.question9 {
+    &__pic-general {
+        background: #fff;
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    &__pic {
+        font-size: 20px;
+        padding:40px;
+        margin: 20px auto;
+        border: 3px solid #000;
+        border-radius: 5px;
+    }
+
+    &__word {
+        width: 180px;
+        height: 180px;
+        padding: 5px;
+        margin: 5px 10px;
+        border: 3px solid rgb(3, 109, 195);
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;  
+        img {
+            max-width: 100%;
+            margin: auto;
+            pointer-events: none;
+        }
+    }
+    .question__body {
+        display: block;
+    }
+    .question__words {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+#question9 {
+    
+    &__word1 {
+        background-image:  url('../assets/img/qa9/smile5.png');
+    }
+    &__word2 {  
+        background-image:  url('../assets/img/qa9/smile4.png');
+    }
+    &__word3 {  
+        background-image:  url('../assets/img/qa9/smile3.png');
+    }
+    &__word4 {  
+        background-image:  url('../assets/img/qa9/smile1.png');
+    }
+    &__word5 {  
+        background-image:  url('../assets/img/qa9/smile2.png');
+    }
+    
+}

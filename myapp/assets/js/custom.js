@@ -12,6 +12,7 @@ $(function() {
 
   //qa1
   if($('.question1').length) {
+
     let currentDroppable = null;
     let currentDroppableError = null;
     let isDragging = false;
@@ -793,11 +794,11 @@ $(function() {
   
       isDragging = false;
   
-      dragElement.style.top = parseInt(dragElement.style.top) + pageYOffset + 'px';
-      dragElement.style.position = 'absolute';
+      question1__word1.style.top = parseInt( question1__word1.style.top) + pageYOffset + 'px';
+      question1__word1.style.position = 'absolute';
   
       document.removeEventListener('mousemove', onMouseMove);
-      dragElement.removeEventListener('mouseup', onMouseUp);
+      question1__word1.removeEventListener('mouseup', onMouseUp);
     }
 
     function enterDroppableError(elem) {
@@ -1390,9 +1391,6 @@ $(function() {
   }
 
   //qa6
-
-
-  //qa2
   if($('.question6').length) {
     let currentDroppable = null;
     let currentDroppableError = null;
@@ -1847,6 +1845,679 @@ $(function() {
   });
 
  }
+   //qa8
+   if($('.question8').length) {
+    let currentDroppable = null;
+    let currentDroppableError = null;
+    let isDragging = false;
+    function onMouseUp(event) {
+      finishDrag();
+    };
+    question8__word1.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word1.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word1.getBoundingClientRect().top;
+      question8__word1.style.position = 'absolute';
+      question8__word1.style.zIndex = 1000;
+      document.body.append(question8__word1);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word1.style.left = pageX - shiftX + 'px';
+        question8__word1.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word1.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word1.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic1');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word1.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word1.onmouseup = null;
+      };
+    };
+    question8__word2.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word2.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word2.getBoundingClientRect().top;
+      question8__word2.style.position = 'absolute';
+      question8__word2.style.zIndex = 1000;
+      document.body.append(question8__word2);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word2.style.left = pageX - shiftX + 'px';
+        question8__word2.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word2.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word2.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic2');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word2.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word2.onmouseup = null;
+      };
+    };
+    question8__word3.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word3.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word3.getBoundingClientRect().top;
+      question8__word3.style.position = 'absolute';
+      question8__word3.style.zIndex = 1000;
+      document.body.append(question8__word3);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word3.style.left = pageX - shiftX + 'px';
+        question8__word3.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word3.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word3.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic3');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word3.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word3.onmouseup = null;
+      };
+    };
+    question8__word4.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word4.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word4.getBoundingClientRect().top;
+      question8__word4.style.position = 'absolute';
+      question8__word4.style.zIndex = 1000;
+      document.body.append(question8__word4);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word4.style.left = pageX - shiftX + 'px';
+        question8__word4.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word4.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word4.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic4');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word4.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word4.onmouseup = null;
+      };
+    };
+    question8__word5.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word5.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word5.getBoundingClientRect().top;
+      question8__word5.style.position = 'absolute';
+      question8__word5.style.zIndex = 1000;
+      document.body.append(question8__word5);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word5.style.left = pageX - shiftX + 'px';
+        question8__word5.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word5.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word5.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic5');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word5.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word5.onmouseup = null;
+      };
+    };
+    question8__word6.onmousedown = function(event) {
+      let shiftX = event.clientX - question8__word6.getBoundingClientRect().left;
+      let shiftY = event.clientY - question8__word6.getBoundingClientRect().top;
+      question8__word6.style.position = 'absolute';
+      question8__word6.style.zIndex = 1000;
+      document.body.append(question8__word6);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question8__word6.style.left = pageX - shiftX + 'px';
+        question8__word6.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question8__word6.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question8__word6.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question8__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question8__pic6');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question8__word6.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question8__word6.onmouseup = null;
+      };
+    };
+
+    function finishDrag() {
+      if(!isDragging) {
+        return;
+      }
+  
+      isDragging = false;
+  
+      dragElement.style.top = parseInt(dragElement.style.top) + pageYOffset + 'px';
+      dragElement.style.position = 'absolute';
+  
+      document.removeEventListener('mousemove', onMouseMove);
+      dragElement.removeEventListener('mouseup', onMouseUp);
+    }
+
+    function enterDroppableError(elem) {
+      elem.classList.add('error');
+    }
+
+    function leaveDroppableError(elem) {
+      elem.classList.remove('error');
+    }
+
+    function enterDroppable(elem) {
+      elem.classList.add('right');
+    }
+
+    function leaveDroppable(elem) {
+      elem.classList.remove('right');
+    }
+    question8__word1.ondragstart = function() {
+      return false;
+    };
+    question8__word2.ondragstart = function() {
+      return false;
+    };
+    question8__word3.ondragstart = function() {
+      return false;
+    };
+    question8__word4.ondragstart = function() {
+      return false;
+    };
+    question8__word5.ondragstart = function() {
+      return false;
+    };
+    question8__word6.ondragstart = function() {
+      return false;
+    };
+  }
+   //qa9
+   if($('.question9').length) {
+    let currentDroppable = null;
+    let currentDroppableError = null;
+    let isDragging = false;
+    function onMouseUp(event) {
+      finishDrag();
+    };
+    question9__word1.onmousedown = function(event) {
+      let shiftX = event.clientX - question9__word1.getBoundingClientRect().left;
+      let shiftY = event.clientY - question9__word1.getBoundingClientRect().top;
+      question9__word1.style.position = 'absolute';
+      question9__word1.style.zIndex = 1000;
+      document.body.append(question9__word1);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question9__word1.style.left = pageX - shiftX + 'px';
+        question9__word1.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question9__word1.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question9__word1.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question9__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question9__pic1');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question9__word1.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question9__word1.onmouseup = null;
+      };
+    };
+    question9__word2.onmousedown = function(event) {
+      let shiftX = event.clientX - question9__word2.getBoundingClientRect().left;
+      let shiftY = event.clientY - question9__word2.getBoundingClientRect().top;
+      question9__word2.style.position = 'absolute';
+      question9__word2.style.zIndex = 1000;
+      document.body.append(question9__word2);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question9__word2.style.left = pageX - shiftX + 'px';
+        question9__word2.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question9__word2.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question9__word2.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question9__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question9__pic2');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question9__word2.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question9__word2.onmouseup = null;
+      };
+    };
+    question9__word3.onmousedown = function(event) {
+      let shiftX = event.clientX - question9__word3.getBoundingClientRect().left;
+      let shiftY = event.clientY - question9__word3.getBoundingClientRect().top;
+      question9__word3.style.position = 'absolute';
+      question9__word3.style.zIndex = 1000;
+      document.body.append(question9__word3);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question9__word3.style.left = pageX - shiftX + 'px';
+        question9__word3.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question9__word3.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question9__word3.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question9__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question9__pic3');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question9__word3.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question9__word3.onmouseup = null;
+      };
+    };
+    question9__word4.onmousedown = function(event) {
+      let shiftX = event.clientX - question9__word4.getBoundingClientRect().left;
+      let shiftY = event.clientY - question9__word4.getBoundingClientRect().top;
+      question9__word4.style.position = 'absolute';
+      question9__word4.style.zIndex = 1000;
+      document.body.append(question9__word4);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question9__word4.style.left = pageX - shiftX + 'px';
+        question9__word4.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question9__word4.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question9__word4.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question9__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question9__pic4');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question9__word4.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question9__word4.onmouseup = null;
+      };
+    };
+    question9__word5.onmousedown = function(event) {
+      let shiftX = event.clientX - question9__word5.getBoundingClientRect().left;
+      let shiftY = event.clientY - question9__word5.getBoundingClientRect().top;
+      question9__word5.style.position = 'absolute';
+      question9__word5.style.zIndex = 1000;
+      document.body.append(question9__word5);
+      moveAt(event.pageX, event.pageY);
+      function moveAt(pageX, pageY) {
+        question9__word5.style.left = pageX - shiftX + 'px';
+        question9__word5.style.top = pageY - shiftY + 'px';
+      }
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        question9__word5.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        question9__word5.hidden = false;
+        if (!elemBelow) return;
+        let droppableBelowError = elemBelow.closest('.question9__pic');
+        if (currentDroppableError != droppableBelowError) {
+          if (currentDroppableError) { // null when we were not over a droppable before this event
+            leaveDroppableError(currentDroppableError);
+          }
+          currentDroppableError = droppableBelowError;
+          if (currentDroppableError) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppableError(currentDroppableError);
+          }
+        }
+        let droppableBelow = elemBelow.closest('#question9__pic5');
+        if (currentDroppable != droppableBelow) {
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            enterDroppable(currentDroppable);
+          }
+        }
+        if(isDragging) {
+          return;
+        }
+        isDragging = true;
+      }
+      document.addEventListener('mousemove', onMouseMove);
+
+      question9__word5.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        question9__word5.onmouseup = null;
+      };
+    };
+
+    function finishDrag() {
+      if(!isDragging) {
+        return;
+      }
+  
+      isDragging = false;
+  
+      dragElement.style.top = parseInt(dragElement.style.top) + pageYOffset + 'px';
+      dragElement.style.position = 'absolute';
+  
+      document.removeEventListener('mousemove', onMouseMove);
+      dragElement.removeEventListener('mouseup', onMouseUp);
+    }
+
+    function enterDroppableError(elem) {
+      elem.classList.add('error');
+    }
+
+    function leaveDroppableError(elem) {
+      elem.classList.remove('error');
+    }
+
+    function enterDroppable(elem) {
+      elem.classList.add('right');
+    }
+
+    function leaveDroppable(elem) {
+      elem.classList.remove('right');
+    }
+    question9__word1.ondragstart = function() {
+      return false;
+    };
+    question9__word2.ondragstart = function() {
+      return false;
+    };
+    question9__word3.ondragstart = function() {
+      return false;
+    };
+    question9__word4.ondragstart = function() {
+      return false;
+    };
+    question9__word5.ondragstart = function() {
+      return false;
+    };
+  }
+
 
 
 });
