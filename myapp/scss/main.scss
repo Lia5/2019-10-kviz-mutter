@@ -202,7 +202,17 @@ ul,li {
 		margin-top: 40px;
 	}
 }
-
+.bellow {
+	&.error {
+		background: rgba(243, 100, 131, 0.5);
+		&.right {
+			background: rgba(119, 246, 178, 0.5);
+		}
+	}
+	&.right {
+		background: rgba(119, 246, 178, 0.5);
+	}
+}
 // @import "sections/header"; 
 @import "sections/qa1";
 @import "sections/qa2";
