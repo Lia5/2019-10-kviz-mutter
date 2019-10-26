@@ -8,15 +8,20 @@
     .question__btns {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
         .btn {
-            width: 45%;
+            width: 34%;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 2px;
+            text-align: center;
             &:before, &:after {
                 width: 100%;
             }
             &:hover {
                 &:before, &:after {
-                border-color: transparent;
-            }
+                    border-color: transparent;
+                }
             }
         }
     }

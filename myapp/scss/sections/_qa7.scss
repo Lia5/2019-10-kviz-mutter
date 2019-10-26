@@ -1,0 +1,43 @@
+.question7 { 
+    .question__body {
+        background: #fff;
+        padding: 80px 40px;
+        border-radius: 25px;
+    }
+    .btn {
+        margin: 14px auto;
+    }
+}
+.question {
+    &__letters {
+        display: flex;
+        font-size: 60px;
+        input {
+            background: none;
+            border: 3px solid #000;;
+            width: 73px;
+            border-radius: 15px;
+            padding: 0 10px;
+            margin: 0 10px;
+            text-align: center;
+            &.letter-right {
+                border-color: rgb(2, 107, 34);
+            }
+            &.letter-error {
+                border-color: red;
+                &.letter-right {
+                    border-color: rgb(2, 107, 34);
+                }
+            }
+        }
+        &-result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+    }
+    &__letter {
+
+    }  
+}
