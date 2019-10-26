@@ -1,0 +1,38 @@
+.question10 {
+    .question__body {
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        img {
+            max-height: 300px;
+            max-width: 100%;
+        }
+    }
+    &__number {
+        background: 0 0;
+        border: 3px solid #000;
+        width: 106px;
+        border-radius: 15px;
+        padding: 0 10px;
+        margin: 0 10px;
+        text-align: center;
+        font-size: 60px;
+        &.letter-right {
+            border-color: rgb(2, 107, 34);
+        }
+        &.letter-error {
+            border-color: red;
+            &.letter-right {
+                border-color: rgb(2, 107, 34);
+            }
+        }
+    }
+    .question__pic {
+        width: 50%;
+    }
+}

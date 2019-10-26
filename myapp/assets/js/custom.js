@@ -1812,39 +1812,18 @@ $(function() {
       return false;
     };
   }
-    
- if($('.question7').length) {
-  // $('.question__letters').on('keypress', '.letter', function() {
-  //   var value = $(this).val();
-  //   var letter = $(this).parent().find('input').attr('data-letter');
-  //   console.log(value);
-  //   console.log(letter);
-  //   if (value == letter) {
-  //       // $('#forgot').css("display", "block");
-  //       // Or
-  //       console.log('ppp');
-  //       $(this).addClass('right');
-  //   } else {
-  //       // $('#forgot').css("display", "none");
-  //       // Or
-  //       console.log('qq 121212');
-  //   }
-  // });
-  $(".question__letters input").keyup(function() {
-    // $('#contenInput').text($(".mytext").val());
-    var value = $(this).val().toLowerCase();
-    var letter = $(this).attr('data-letter');
-    console.log(value);
-    console.log(letter);
-    if (value == letter) {
-        console.log('ppp');
-        $(this).addClass('letter-right').parent();
-    } else {
-      $(this).addClass('letter-error').parent();
-    }
-  });
-
- }
+  //qa7
+  if($('.question7').length) {
+    $(".question__letters input").keyup(function() {
+      var value = $(this).val().toLowerCase();
+      var letter = $(this).attr('data-letter');
+      if (value == letter) {
+          $(this).addClass('letter-right').parent();
+      } else {
+        $(this).addClass('letter-error').parent();
+      }
+    });
+  }
    //qa8
    if($('.question8').length) {
     let currentDroppable = null;
@@ -2517,7 +2496,21 @@ $(function() {
       return false;
     };
   }
-
+  //qa10
+  if($('.question10').length) {
+    $(".question10__number").keyup(function() {
+      var value = $(this).val();
+      var number = $(this).attr('data-number');
+      console.log(value);
+      console.log(number);
+      if (value == number) {
+          console.log('ppp');
+          $(this).addClass('letter-right').parent();
+      } else {
+        $(this).addClass('letter-error').parent();
+      }
+    });
+  }
 
 
 });
