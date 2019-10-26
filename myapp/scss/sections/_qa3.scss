@@ -1,0 +1,10 @@
+.question {
+    &__pic {
+        text-align: center;
+        max-height: 80vh;
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.question5 { 
+    .question__body {
+        background: #fff;
+        padding: 40px;
+        border-radius: 25px;
+        justify-content: center;
+    }
+    .question__btns {
+        display: flex;
+        flex-wrap: wrap;
+        .btn {
+            width: 45%;
+            &:before, &:after {
+                width: 100%;
+            }
+            &:hover {
+                &:before, &:after {
+                border-color: transparent;
+            }
+            }
+        }
+    }
+}

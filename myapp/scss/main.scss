@@ -169,6 +169,48 @@ ul,li {
 			border-color: red;
 		}
 	}
+	&--wrong {
+		&.active {
+			background-color: #000;
+			color: #fff;
+			&:before {
+				content: none;
+			}
+			&:after {
+				content: "Falsch!";
+				height: auto;
+				bottom: -25px;
+				top: auto;
+				left: 0;
+				color: red;
+				font-size: 14px;
+				border: none;
+				letter-spacing: normal;
+				text-transform: initial;
+			}
+		}
+	}
+	&--right {
+		&.active {
+			background-color: rgb(3, 85, 28);
+			color: #fff;
+			&:before {
+				content: none;
+			}
+			&:after {
+				content: "Richtig!";
+				height: auto;
+				bottom: -25px;
+				top: auto;
+				left: 0;
+				color: rgb(3, 85, 28);
+				font-size: 14px;
+				border: none;
+				letter-spacing: normal;
+				text-transform: initial;
+			}
+		}
+	}
 }
 .kviz {
 	height: 100vh;
