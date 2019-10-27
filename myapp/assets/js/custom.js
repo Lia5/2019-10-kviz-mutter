@@ -224,7 +224,7 @@ $(function() {
       every time it fires, grab the location
       of touch and assign it to box */
       
-      dragElement.addEventListener('touchmove', function(event) {
+      document.addEventListener('touchmove', function(event) {
         // find the element that you want to drag.
         let dragElement = event.target.closest('.draggable');
         // grab the location of touch
@@ -239,12 +239,57 @@ $(function() {
       when released using touchend event.
       This will be the drop position. */
       
-      dragElement.addEventListener('touchend', function(event) {
+      document.addEventListener('touchend', function(event) {
         // find the element that you want to drag.
         let dragElement = event.target.closest('.draggable');
         // current box position.
         var x = parseInt(dragElement.style.left);
         var y = parseInt(dragElement.style.top);
+
+        let currentDroppable = null;
+        dragElement.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        dragElement.hidden = false;
+        
+        // событие mousemove может произойти и когда указатель за пределами окна
+        // (мяч перетащили за пределы экрана)
+
+        // если clientX/clientY за пределами окна, elementFromPoint вернёт null
+        if (!elemBelow) return;
+
+        // потенциальные цели переноса помечены классом droppable (может быть и другая логика)
+        let droppableBelow = elemBelow.closest('.droppable');
+
+        if (currentDroppable != droppableBelow) {
+          // мы либо залетаем на цель, либо улетаем из неё
+          // внимание: оба значения могут быть null
+          //   currentDroppable=null,
+          //     если мы были не над droppable до этого события (например, над пустым пространством)
+          //   droppableBelow=null,
+          //     если мы не над droppable именно сейчас, во время этого события
+
+          if (currentDroppable) {
+            // логика обработки процесса "вылета" из droppable (удаляем подсветку)
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) {
+            // логика обработки процесса, когда мы "влетаем" в элемент droppable
+            enterDroppable(currentDroppable);
+          }
+        }
+        let dragElementId = dragElement.getAttribute('id').substr(15, 2);
+        if (elemBelow.classList.contains('bellow')) {
+           var elemBelowId = elemBelow.getAttribute('id').substr(14, 2);
+        }
+       
+
+        if (dragElementId == elemBelowId) {
+
+          elemBelow.classList.add('right');
+        } else {
+          elemBelow.classList.add('error');
+        }
       })
   
   }
