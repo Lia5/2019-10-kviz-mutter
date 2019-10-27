@@ -218,52 +218,76 @@ $(function() {
   //mob
   if ( window.innerWidth < 1023 || window.screen.width < 1023) {
     
+      let dragElement = $('.draggable');
+      let belowElement = $('.bellow');
+      var textError = $('.popup').html();
+      console.log($(dragElement));
+
+        belowElement.on('click', function() {
+          if ($(dragElement).hasClass('mobhover')) {
+            if ($(dragElement).hasClass('none')) {
+
+            }
+          } else {
+            $('.popup').addClass('open');
+            setTimeout(function() {
+              $('.popup').removeClass('open');
+            }, 1020);
+          }
+          
+        });        
       
-      
-      /* listen to the touchMove event,
-      every time it fires, grab the location
-      of touch and assign it to box */
+      dragElement.on('click', function() {
+        
+        $('.bellow.error').removeClass('error');
+        $('.draggable.mobhover').removeClass('mobhover');
+        $this = this;
+        var currentdrag = this;
+        dragElementId = $this.getAttribute('id').substr(15, 2);
+        $(this).addClass('mobhover');
+        belowElement.on('click', function() {
+          var currentBellow = this;
+          belowElementId = currentBellow.getAttribute('id').substr(14, 2);
+          if (dragElementId == belowElementId) {
+            $(currentBellow).addClass('right');
+            
+            $('.popup').addClass('open');
+            $('.popup').html('RICHTIG!');
+
+            setTimeout(function() {
+              $(currentdrag).addClass('none');
+              $(currentdrag).removeClass('mobhover');
+              $('.popup').removeClass('open');
+            }, 800);
+            setTimeout(function() {
+              $('.popup').html(textError);
+            }, 1000);            
+          } else {
+            $(currentBellow).addClass('error');
+            belowElement.on('click', function() {
+              var currentBellowNext = this;
+              if (dragElementId == belowElementId) {
+                $(currentBellowNext).addClass('right');
+                $('.popup').addClass('open');
+                $('.popup').html('RICHTIG!');
+                setTimeout(function() {
+                  $(currentdrag).addClass('none');
+                  $(currentdrag).removeClass('mobhover');
+                  $('.popup').removeClass('open');
+                  $(belowElement).removeClass('error');
+                }, 800);
+                setTimeout(function() {
+                  $('.popup').html(textError);
+                }, 1000); 
+              }
+            });
+          }
+        });
+      });
+
       
       document.addEventListener('touchmove', function(event) {
-        // find the element that you want to drag.
-        let dragElement = event.target.closest('.draggable');
-        // grab the location of touch
-        var touchLocation = event.targetTouches[0];
-        dragElement.style = "position: absolute";
-        // assign box new coordinates based on the touch.
-        dragElement.style.left = touchLocation.pageX + 'px';
-        dragElement.style.top = touchLocation.pageY + 'px';
-
-        let currentDroppable = null;
-        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
         
-        // событие mousemove может произойти и когда указатель за пределами окна
-        // (мяч перетащили за пределы экрана)
-
-        // если clientX/clientY за пределами окна, elementFromPoint вернёт null
-        if (!elemBelow) return;
-
-        // потенциальные цели переноса помечены классом droppable (может быть и другая логика)
-        let droppableBelow = elemBelow.closest('.droppable');
-
-        if (currentDroppable != droppableBelow) {
-          // мы либо залетаем на цель, либо улетаем из неё
-          // внимание: оба значения могут быть null
-          //   currentDroppable=null,
-          //     если мы были не над droppable до этого события (например, над пустым пространством)
-          //   droppableBelow=null,
-          //     если мы не над droppable именно сейчас, во время этого события
-
-          if (currentDroppable) {
-            // логика обработки процесса "вылета" из droppable (удаляем подсветку)
-            leaveDroppable(currentDroppable);
-          }
-          currentDroppable = droppableBelow;
-          if (currentDroppable) {
-            // логика обработки процесса, когда мы "влетаем" в элемент droppable
-            enterDroppable(currentDroppable);
-          }
-        }
         let dragElementId = dragElement.getAttribute('id').substr(15, 2);
         if (elemBelow.classList.contains('bellow')) {
            var elemBelowId = elemBelow.getAttribute('id').substr(14, 2);
@@ -279,20 +303,7 @@ $(function() {
 
       })
       
-      /* record the position of the touch
-      when released using touchend event.
-      This will be the drop position. */
-      
-      document.addEventListener('touchend', function(event) {
-        // find the element that you want to drag.
-        let dragElement = event.target.closest('.draggable');
-        // current box position.
-        var x = parseInt(dragElement.style.left);
-        var y = parseInt(dragElement.style.top);
-
-
-      })
-  
+ 
   }
 
 });
