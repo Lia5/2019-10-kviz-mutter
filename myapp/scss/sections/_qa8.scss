@@ -55,15 +55,21 @@
     }
     &__pic5 {  
         top: 71%;
-        left: 42%;
-        width: 18%;
-        height: 19%;
+        left: 37%;
+        width: 26%;
+        height: 27%;
+        @media only screen and (max-width: 1023px) {
+            top: 67%;
+        }
     }
     &__pic6 {  
         top: 49%;
         left: 64%;
         width: 31%;
         height: 52%;
+        @media only screen and (max-width: 1023px) {
+            top: 45%;
+        }
     }
 
     

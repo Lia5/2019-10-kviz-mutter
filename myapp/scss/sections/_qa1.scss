@@ -29,6 +29,9 @@
         font-size: 30px;
         padding: 40px;
         padding-left: 180px;
+        // @media only screen and (max-width: 1024px) {
+        //     display: none;
+        // }
         @media only screen and (max-width: 980px) {
             font-size: 20px;
             padding: 10px;
@@ -37,6 +40,12 @@
         @media only screen and (max-width: 557px) {
             padding-left: 10px;
         }
+        // &--mob {
+        //     display: none;
+        //     @media only screen and (max-width: 1024px) {
+        //         display: block;
+        //     }
+        // }
     }
     &__qa {
         display: flex;
@@ -128,6 +137,9 @@
         left: 74%;
         width: 15%;
         height: 30%;
+        @media only screen and (max-width: 570px) {
+            top: 11%;
+        }
     }
     &__pic6 {  
         top: 1%;
@@ -140,54 +152,100 @@
         left: 2%;
         width: 11%;
         height: 28%;
+        @media only screen and (max-width: 570px) {
+            top: 31%;
+        }
     }
     &__pic8 {  
         top: 26%;
         left: 18%;
         width: 15%;
         height: 29%;
+        @media only screen and (max-width: 570px) {
+            top: 26%;
+        }
     }
     &__pic9 {  
         top: 27%;
         left: 40%;
         width: 11%;
         height: 28%;
+        @media only screen and (max-width: 570px) {
+            top: 24%;
+        }
     }
     &__pic10 {  
         top: 63%;
         left: 12%;
         width: 11%;
         height: 27%;
+        @media only screen and (max-width: 1023px) {
+            top: 58%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 54%;
+            left: 11%;
+        }
     }
     &__pic11 {  
         top: 64%;
         left: 28%;
         width: 14%;
         height: 22%;
+        @media only screen and (max-width: 1023px) {
+            top: 61%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 55%;
+        }
     }
     &__pic12 {  
         top: 61%;
         left: 45%;
         width: 10%;
         height: 34%;
+        @media only screen and (max-width: 1023px) {
+            top: 58%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 53%;
+        }
     }
     &__pic13 {  
         top: 51%;
         left: 56%;
         width: 11%;
         height: 36%;
+        @media only screen and (max-width: 1023px) {
+            top: 48%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 44%;
+        }
     }
     &__pic14 {  
         top: 48%;
         left: 69%;
         width: 15%;
         height: 32%;
+        @media only screen and (max-width: 1023px) {
+            top: 45%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 43%;
+        }
     }
     &__pic15 {  
         top: 68%;
         left: 87%;
         width: 12%;
         height: 21%;
+        @media only screen and (max-width: 1023px) {
+            top: 64%;
+        }
+        @media only screen and (max-width: 570px) {
+            top: 60%;
+        }
     }
    
 }

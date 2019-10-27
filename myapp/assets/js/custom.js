@@ -200,17 +200,25 @@ $(function() {
 
   //qa10
   if($('.question10').length) {
-    $(".question10__number").keyup(function() {
+    $(".question10__number").keyup(function(e) {
       var value = $(this).val();
       var number = $(this).attr('data-number');
       console.log(value);
       console.log(number);
+      console.log(e.keyCode);
       if (value == number) {
-          console.log('ppp');
           $(this).addClass('letter-right').parent();
+          if ((e.keyCode == 8)||(e.keyCode == 46)){
+            $(this).removeClass('letter-right').parent();
+           }
       } else {
         $(this).addClass('letter-error').parent();
       }
+
+       if ((e.keyCode == '8')||(e.keyCode == '46')){
+        $(this).addClass('letter-error').parent();
+        $(this).removeClass('letter-right').parent();
+       }
     });
   }
 

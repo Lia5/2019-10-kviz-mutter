@@ -76,12 +76,19 @@
         left: 38%;
         width: 38%;
         height: 39%;
+        @media only screen and (max-width: 1023px) {
+            top: 58%;
+            height: 37%;
+        }
     }
     &__pic9 {  
         top: 37%;
         left: 75%;
         width: 23%;
-        height: 48%
+        height: 48%;
+        @media only screen and (max-width: 1023px) {
+            top: 34%;
+        }
     }
     
 }
