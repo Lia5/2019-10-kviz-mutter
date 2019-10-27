@@ -228,7 +228,7 @@ $(function() {
         // find the element that you want to drag.
         let dragElement = event.target.closest('.draggable');
         // grab the location of touch
-        var touchLocation = event.targetTouches[0];
+        var touchLocation = e.targetTouches[0];
         dragElement.style = "position: absolute";
         // assign box new coordinates based on the touch.
         dragElement.style.left = touchLocation.pageX + 'px';
@@ -245,10 +245,10 @@ $(function() {
         // current box position.
         var x = parseInt(dragElement.style.left);
         var y = parseInt(dragElement.style.top);
-
+        console.log(x, y);
         let currentDroppable = null;
         dragElement.hidden = true;
-        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        let elemBelow = document.elementFromPoint(x, y);
         dragElement.hidden = false;
         
         // событие mousemove может произойти и когда указатель за пределами окна
