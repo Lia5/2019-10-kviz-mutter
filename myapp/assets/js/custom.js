@@ -236,6 +236,7 @@ $(function() {
 
         let currentDroppable = null;
         dragElement.hidden = true;
+        alert(event.clientX);
         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
         alert(elemBelow);
         dragElement.hidden = false;
