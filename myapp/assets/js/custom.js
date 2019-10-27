@@ -206,7 +206,6 @@ $(function() {
       console.log(value);
       console.log(number);
       console.log(e.keyCode);
-      console.log(e.charCode);
       if (value == number) {
           $(this).addClass('letter-right').parent();
           if ((e.keyCode == 8)||(e.keyCode == 46)){
@@ -216,7 +215,7 @@ $(function() {
         $(this).addClass('letter-error').parent();
       }
 
-       if ((e.keyCode == '8')||(e.keyCode == '46')){
+       if ((e.keyCode == '8')||(e.keyCode == '46')||(e.keyCode == 'undefined') ){
         var value = $(this).val('');
         $(this).addClass('letter-error').parent();
         $(this).removeClass('letter-right').parent();
@@ -235,9 +234,7 @@ $(function() {
 
         belowElement.on('click', function() {
           if ($(dragElement).hasClass('mobhover')) {
-            if ($(dragElement).hasClass('none')) {
 
-            }
           } else {
             $('.popup').addClass('open');
             setTimeout(function() {
@@ -294,25 +291,7 @@ $(function() {
           }
         });
       });
-
-      
-      document.addEventListener('touchmove', function(event) {
-        
-        let dragElementId = dragElement.getAttribute('id').substr(15, 2);
-        if (elemBelow.classList.contains('bellow')) {
-           var elemBelowId = elemBelow.getAttribute('id').substr(14, 2);
-        }
-       
-
-        if (dragElementId == elemBelowId) {
-
-          elemBelow.classList.add('right');
-        } else {
-          elemBelow.classList.add('error');
-        }
-
-      })
-      
+ 
  
   }
 
