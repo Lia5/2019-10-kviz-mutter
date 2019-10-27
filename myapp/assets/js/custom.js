@@ -200,12 +200,15 @@ $(function() {
 
   //qa10
   if($('.question10').length) {
-    $(".question10__number").on("keyup input", function(e) {
+      $('.question10__number').bind("change keyup input click", function() {
+        if (this.value.match(/[^0-9]/g)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        }
+      });
+      $(".question10__number").on("keyup input", function(e) {
       var value = $(this).val();
       var number = $(this).attr('data-number');
-      console.log(value);
-      console.log(number);
-      console.log(e.keyCode);
+
       if (value == number) {
           $(this).addClass('letter-right').parent();
           if ((e.keyCode == 8)||(e.keyCode == 46)){
@@ -215,7 +218,7 @@ $(function() {
         $(this).addClass('letter-error').parent();
       }
 
-       if ((e.keyCode == '8')||(e.keyCode == '46')||(e.keyCode == undefined) ){
+       if ((e.keyCode == '8')||(e.keyCode == '46')){
         var value = $(this).val('');
         $(this).addClass('letter-error').parent();
         $(this).removeClass('letter-right').parent();
