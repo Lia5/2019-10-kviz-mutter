@@ -4,6 +4,7 @@
         max-height: 80vh;
         overflow: hidden;
         img {
+            max-width: 536px;
             height: 100%;
             @media only screen and (max-width: 1240px) {
                 height: 80vh;
@@ -13,5 +14,29 @@
                 max-width: 100%; 
             }
         }
+    }
+    &__btns {
+        align-self: center;
+        .btn {
+            background: #fff;
+            &:hover {
+                background-color: #30b4c5;
+            }
+            &--right.active {
+                background-color: #026b22;
+            }
+            &--wrong.active {
+                background-color: #2a2929;
+            }
+            @media only screen and (max-width: 557px) {
+                max-width: 208px;
+            }
+        }
+        
+    }
+}
+.question3 {
+    .question__body {
+        justify-content: space-around;
     }
 }

@@ -2,19 +2,19 @@
 .question {
     &__number {
         position: absolute;
-        width: 155px;
+        width: 166px;
         text-align: center;
         white-space: nowrap;
-        padding: 42px 34px 21px;
+        padding: 51px 34px 31px;
         background: url('../assets/img/num2.png') no-repeat;
         background-size: 100%;
-        font-size: 30px;
+        font-size: 28px;
         color: #fff;
         font-weight: bold;
         @media only screen and (max-width: 980px) {
-            width: 73px;
-            padding: 16px 17px 9px;
-            font-size: 20px;
+            width: 83px;
+            padding: 26px 18px 16px 27px;
+            font-size: 14px;
         }
         @media only screen and (max-width: 557px) {
             position: static;
@@ -83,9 +83,9 @@
     }
 
     &__word {
-        max-width: 162px;
+        width: 158px;
         padding: 5px;
-        margin: 5px 10px;
+        margin: 2px 5px;
         border: 3px solid rgb(3, 109, 195);
         border-radius: 5px;
         cursor: pointer;
@@ -96,12 +96,7 @@
             // position: absolute;
         }
     }
-    .question__words {
-        @media only screen and (max-width: 1023px) {
-            min-height: 336px;
-        }
-    }
-    
+   
 }
 #question1 {
     &__pic1 {

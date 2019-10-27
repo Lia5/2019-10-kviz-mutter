@@ -151,6 +151,17 @@ ul,li {
 		min-width: auto;
 		font-size: 16px;
 		padding: 6px 15px;
+		// margin: 19px auto;
+	}
+
+	&-wrap {
+		display: flex;
+		max-width: 620px;
+		margin: 20px auto;
+		@media only screen and (max-width: 557px) {
+			flex-wrap: wrap;
+		}
+
 	}
 	&:hover {
 		background-color: rgb(48, 180, 197);
@@ -206,6 +217,11 @@ ul,li {
 		}
 	}
 }
+a.btn {
+	@media only screen and (max-width: 557px) {
+		margin: 10px auto;
+	}
+}
 .kviz {
 	height: 100vh;
 	display: flex;
@@ -224,6 +240,9 @@ ul,li {
 			margin-top: 10px;
 		}
 	
+	}
+	.btn {
+		width: 346px;
 	}
 }
 .bellow {
