@@ -200,7 +200,7 @@ $(function() {
 
   //qa10
   if($('.question10').length) {
-    $(".question10__number").keyup(function(e) {
+    $(".question10__number").on("keyup", function(e) {
       var value = $(this).val();
       var number = $(this).attr('data-number');
       console.log(value);
