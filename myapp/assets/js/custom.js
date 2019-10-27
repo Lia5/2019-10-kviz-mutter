@@ -237,6 +237,7 @@ $(function() {
         let currentDroppable = null;
         dragElement.hidden = true;
         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        alert(elemBelow);
         dragElement.hidden = false;
         
         // событие mousemove может произойти и когда указатель за пределами окна
