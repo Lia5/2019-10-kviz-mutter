@@ -72,6 +72,11 @@
         font-size: 20px;
         width: 190px;
         margin: 2px 4px;
+        @media only screen and (max-width: 557px) {
+            font-size: 14px;
+            width: 149px;
+            margin: 2px auto;
+        }
     }
 }
 .time {
