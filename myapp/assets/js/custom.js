@@ -215,7 +215,7 @@ $(function() {
         $(this).addClass('letter-error').parent();
       }
 
-       if ((e.keyCode == '8')||(e.keyCode == '46')||(e.keyCode == 'undefined') ){
+       if ((e.keyCode == '8')||(e.keyCode == '46')||(e.keyCode == undefined) ){
         var value = $(this).val('');
         $(this).addClass('letter-error').parent();
         $(this).removeClass('letter-right').parent();
