@@ -228,7 +228,7 @@ $(function() {
         // find the element that you want to drag.
         let dragElement = event.target.closest('.draggable');
         // grab the location of touch
-        var touchLocation = e.targetTouches[0];
+        var touchLocation = event.targetTouches[0];
         dragElement.style = "position: absolute";
         // assign box new coordinates based on the touch.
         dragElement.style.left = touchLocation.pageX + 'px';
