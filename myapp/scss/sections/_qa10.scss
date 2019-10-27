@@ -37,6 +37,15 @@
         }
     }
     .question__pic {
-        width: 50%;
+        @media only screen and (max-width: 806px) {
+            width: 53%;
+        }
+        img {
+            width: auto;
+            padding-right: 20%;
+            @media only screen and (max-width: 557px) {
+                padding-right: 0;
+            }
+        }
     }
 }
