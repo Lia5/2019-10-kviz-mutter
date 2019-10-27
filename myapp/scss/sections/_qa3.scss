@@ -4,10 +4,10 @@
         max-height: 80vh;
         overflow: hidden;
         img {
-            max-width: 536px;
+            width: 765px;
             height: 100%;
             @media only screen and (max-width: 1240px) {
-                height: 80vh;
+                max-width: 536px;
             }
             @media only screen and (max-width: 557px) {
                 height: auto;
