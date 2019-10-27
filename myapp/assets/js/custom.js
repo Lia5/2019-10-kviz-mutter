@@ -206,6 +206,7 @@ $(function() {
       console.log(value);
       console.log(number);
       console.log(e.keyCode);
+      console.log(e.charCode);
       if (value == number) {
           $(this).addClass('letter-right').parent();
           if ((e.keyCode == 8)||(e.keyCode == 46)){
@@ -216,6 +217,7 @@ $(function() {
       }
 
        if ((e.keyCode == '8')||(e.keyCode == '46')){
+        var value = $(this).val('');
         $(this).addClass('letter-error').parent();
         $(this).removeClass('letter-right').parent();
        }
