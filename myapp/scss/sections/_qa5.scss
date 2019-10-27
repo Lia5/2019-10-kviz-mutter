@@ -1,4 +1,7 @@
 .question5 { 
+    .question__text {
+        justify-content: flex-start;
+    }
     .question__body {
         background: #fff;
         padding: 40px;
